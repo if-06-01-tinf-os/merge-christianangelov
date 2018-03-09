@@ -43,6 +43,36 @@ void print_array(int* array, int n)
   printf("\n");
 }
 
-void merge(int* first_array, int n_first, int* second_array, int n_second, int* merged_array)
+void merge(int* leftArray, int nL, int* rightArray, int nR, int* newArray)
 {
+  int i = 0;
+  int j = 0;
+  int k = 0;
+  while (i < nL && j < nR)
+  {
+    if (leftArray[i] <=  rightArray [j])
+    {
+      newArray[k]=leftArray[i];
+      i++;
+    }
+    else
+    {
+      newArray[k]=rightArray[j];
+      j++;
+    }
+    k++;
+  }
+
+  while (i < nL)
+  {
+    newArray[k]=leftArray[i];
+    i++;
+    k++;
+  }
+  while (j < nR)
+  {
+    newArray[k]=leftArray[i];
+    j++;
+    k++;
+  }
 }
